@@ -9,12 +9,12 @@
     <p>Введите номер телефона слитно, в формате: <br>
         77ххххххххх (без знака плюс "+") <br><br>
         Например: 77070001122<br><br>
-        <input type="text" id="n1"></p>
-    <button onclick="plus()">Открыть в WhatsApp</button>
+        <input type="tel" id="n1"></p>
+    <button onclick="openWA()">Открыть в WhatsApp</button>
     <hr>
 </body>
 <script>
-    function plus(){
+    function openWA(){
         var number, result;
         number = document.getElementById("n1").value;
         var link = `https://wa.me/${number}`;
