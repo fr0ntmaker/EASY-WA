@@ -7,7 +7,7 @@
     <title>Easy Messaging</title>
 </head>
     <body>
-        <div class="container">            
+        <div class="container" id="app">            
             <div class="row">
                 <div class="col-md-8 align-self-center bg-success m-2 pt-2 rounded shadow">                
                     <h5 class="text-left text-white font-weight-bold">EASY-WHATSAPP</h5>
@@ -18,13 +18,23 @@
                     <form>
                         <div class="form-row mb-3">
                             <div class="col-auto">            
-                                <label for="phone_num">         
-                                    <span class="form-text text-muted">Введите номер:</span>
+                                <label for="phone">         
+                                    <span class="form-text text-muted">Проверьте введенный номер: {{phone}}</span>
                                 </label>
-                                <input type="tel" class="form-control" id="phone_num" aria-describedby="numberHelp">
+                                <!-- <input type="tel" class="form-control" id="phone_num" aria-describedby="numberHelp"> -->
+                                <input type="tel" 
+                                v-model="phone"
+                                name="phone"
+                                id="phone"
+                                placeholder="7 777 777 7777"
+                                autocomplete="tel"
+                                aria-describedby="numberHelp"
+                                maxlength="16"
+                                class="form-control"
+                                v-phone/>                                
                                 <small id="numberHelp" class="form-text text-muted">Введите номер телефона слитно, в формате: <br>
-                                    77ххххххххх (без знака плюс "+") <br><br>
-                                    Например: <span class="text-muted">77070001122</span>
+                                    77ххххххххх<br><br>
+                                    Например: <span class="text-muted">77010001111</span>
                                 </small>
                             </div>
                         </div>                        
@@ -63,35 +73,30 @@
             <div class="row">
                 <div class="col-md-8 rounded-bottom bg-dark py-4">
                     <span class="text-white" style="letter-spacing: 2px; word-spacing: 3px"><small>©easy-WA 2020.</small></span>
+                    <span id="hotlog_counter"></span>
+                    <span id="hotlog_dyn"></span>
                 </div>
             </div> 
-        </div>
-
+        </div>        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script async src="https://static.addtoany.com/menu/page.js"></script>
-        <script>
-            function openWA(){                
-                let number = document.getElementById("phone_num").value;                
-                window.open(`https://wa.me/${number}`)
-            }
-        </script>
+        <script src="index.js"></script>
         <!-- HotLog -->
-<span id="hotlog_counter"></span>
-<span id="hotlog_dyn"></span>
-<script type="text/javascript">
-var hot_s = document.createElement('script');
-hot_s.type = 'text/javascript'; hot_s.async = true;
-hot_s.src = 'https://js.hotlog.ru/dcounter/2587749.js';
-hot_d = document.getElementById('hotlog_dyn');
-hot_d.appendChild(hot_s);
-</script>
-<noscript>
-<a href="https://click.hotlog.ru/?2587749" target="_blank"><img
-src="https://hit5.hotlog.ru/cgi-bin/hotlog/count?s=2587749&amp;im=510" border="0"
-alt="HotLog"></a>
-</noscript>
-<!-- /HotLog -->
+        <script type="text/javascript">
+        var hot_s = document.createElement('script');
+        hot_s.type = 'text/javascript'; hot_s.async = true;
+        hot_s.src = 'https://js.hotlog.ru/dcounter/2587749.js';
+        hot_d = document.getElementById('hotlog_dyn');
+        hot_d.appendChild(hot_s);
+        </script>
+        <noscript>
+        <a href="https://click.hotlog.ru/?2587749" target="_blank">
+            <img src="https://hit5.hotlog.ru/cgi-bin/hotlog/count?s=2587749&amp;im=510" alt="HotLog">
+        </a>
+        </noscript>
+        <!-- /HotLog -->
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
     </body>
 </html>
