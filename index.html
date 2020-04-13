@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/ICO/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/ICO/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/ICO/favicon-16x16.png">
+    <link rel="manifest" href="img/ICO/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
+    <link rel="stylesheet" href="style/all.css">
     <title>Easy Messaging</title>
 </head>
     <body>
         <div class="container" id="app">            
             <div class="row">
                 <div class="col-md-8 align-self-center bg-success m-2 pt-2 rounded shadow">                
-                    <h5 class="text-left text-white font-weight-bold">EASY-WHATSAPP</h5>
+                    <H1 class="lead text-left text-white font-weight-bold">EASY-WHATSAPP</H1>
                 </div>
             </div>
             <div class="row">
@@ -19,22 +25,23 @@
                         <div class="form-row mb-3">
                             <div class="col-auto">            
                                 <label for="phone">         
-                                    <span class="form-text text-muted">Проверьте введенный номер: {{phone}}</span>
+                                    <span class="form-text text-muted">Введите номер:</span>
                                 </label>
-                                <!-- <input type="tel" class="form-control" id="phone_num" aria-describedby="numberHelp"> -->
+                                <br>
                                 <input type="tel" 
                                 v-model="phone"
                                 name="phone"
                                 id="phone"
-                                placeholder="7 777 777 7777"
+                                placeholder="7(777)-777-7777"
                                 autocomplete="tel"
                                 aria-describedby="numberHelp"
                                 maxlength="16"
                                 class="form-control"
                                 v-phone/>                                
-                                <small id="numberHelp" class="form-text text-muted">Введите номер телефона слитно, в формате: <br>
-                                    77ххххххххх<br><br>
-                                    Например: <span class="text-muted">77010001111</span>
+                                <br>
+                                <small>
+                                    <span id="numberHelp" class="form-text text-muted">Проверьте введенный номер:
+                                        <br><h3>{{phone}}</h3></span>
                                 </small>
                             </div>
                         </div>                        
@@ -43,7 +50,7 @@
                 </div>          
             </div>                       
             <div class="row">
-                <div class="col-md-8 p-3">                                        
+                <div class="col-md-8 bg-light p-3 shadow">                                        
                     <!-- AddToAny Socials Share BEGIN -->
                     <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
                         <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
@@ -70,11 +77,39 @@
                     <!-- AddToAny Socials Share END -->
                 </div>
             </div> 
-            <div class="row">
-                <div class="col-md-8 rounded-bottom bg-dark py-4">
-                    <span class="text-white" style="letter-spacing: 2px; word-spacing: 3px"><small>©easy-WA 2020.</small></span>
-                    <span id="hotlog_counter"></span>
-                    <span id="hotlog_dyn"></span>
+            <div id="footer" class="row">
+                <div class="col-md-8 rounded-bottom bg-dark py-3 shadow">
+                    <div class="row align-items-center">
+                        <div class="col col-md-1 text-center">
+                            <span>2020</span>
+                        </div>
+                        <div class="col col-md-3 text-left">
+                            <span>© Easy-WA</span>
+                        </div>
+                        <div class="col col-md-3 text-left">
+                            <span class="menu">Обратная связь</span>
+                            <ul class="list-unstyled">
+                                <li><a href="mailto:feedback@easy-wa.me?subject=Feedback%20from%20EASY-WA%20site">e-mail</a></li>
+                                <li><a href="#">Jabber</a></li>                                
+                                <li><a href="https://t.me/easywafeedback">Telegram</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-md-3 text-left">
+                            <span class="menu">Помочь проекту</span>
+                            <ul class="list-unstyled">
+                                <li><a href="#">BTC</a></li>
+                                <li><a href="#">Webmoney</a></li>
+                                <li><a href="#">Buy me a coffee</a></li>
+                            </ul>                           
+                        </div>
+                        <div class="col col-md-1">
+                            <span id="hotlog_counter"></span>
+                            <span id="hotlog_dyn"></span>
+                            <a href="https://click.hotlog.ru/?2587749" target="_blank">
+                                <img src="https://hit5.hotlog.ru/cgi-bin/hotlog/count?s=2587749&amp;im=510" alt="HotLog">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div> 
         </div>        
@@ -85,17 +120,12 @@
         <script src="index.js"></script>
         <!-- HotLog -->
         <script type="text/javascript">
-        var hot_s = document.createElement('script');
-        hot_s.type = 'text/javascript'; hot_s.async = true;
-        hot_s.src = 'https://js.hotlog.ru/dcounter/2587749.js';
-        hot_d = document.getElementById('hotlog_dyn');
-        hot_d.appendChild(hot_s);
-        </script>
-        <noscript>
-        <a href="https://click.hotlog.ru/?2587749" target="_blank">
-            <img src="https://hit5.hotlog.ru/cgi-bin/hotlog/count?s=2587749&amp;im=510" alt="HotLog">
-        </a>
-        </noscript>
+            var hot_s = document.createElement('script');
+            hot_s.type = 'text/javascript'; hot_s.async = true;
+            hot_s.src = 'https://js.hotlog.ru/dcounter/2587749.js';
+            hot_d = document.getElementById('hotlog_dyn');
+            hot_d.appendChild(hot_s);
+        </script>        
         <!-- /HotLog -->
         <script async src="https://static.addtoany.com/menu/page.js"></script>
     </body>

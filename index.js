@@ -20,8 +20,17 @@ new Vue({
     }
 })
 
+// function openWA(){                
+//     let number = document.getElementById("phone").value;                
+//     window.open(`https://wa.me/${number}`)
+// }
+ 
 function openWA(){                
-    let number = document.getElementById("phone").value;                
+    let number = document.getElementById("phone").value;
+        if(number === ''){
+            e.preventDefault();
+            alert('Введите правильный номер')
+        } else {
     window.open(`https://wa.me/${number}`)
+    }                
 }
-        
