@@ -41,12 +41,13 @@
                                 <br>
                                 <small>
                                     <span id="numberHelp" class="form-text text-muted">Проверьте введенный номер:
-                                        <br><h3>{{phone}}</h3></span>
+                                        <br>
+                                        <h3>+{{phone}}</h3></span>                                        
                                 </small>
                             </div>
-                        </div>                        
+                        </div>                                 
                         <button type="submit" class="btn btn-success rounded" onclick="openWA()">Открыть в WhatsApp</button>
-                    </form>
+                    </form>                    
                 </div>          
             </div>                       
             <div class="row">
@@ -83,7 +84,7 @@
                         <div class="col col-md-1 text-center">
                             <span>2020</span>
                         </div>
-                        <div class="col col-md-3 text-left">
+                        <div class="col col-md-3 text-center">
                             <span>© Easy-WA</span>
                         </div>
                         <div class="col col-md-3 text-left">
@@ -91,22 +92,29 @@
                             <ul class="list-unstyled">
                                 <li><a href="mailto:feedback@easy-wa.me?subject=Feedback%20from%20EASY-WA%20site">e-mail</a></li>
                                 <li><a href="#">Jabber</a></li>                                
-                                <li><a href="https://t.me/easywafeedback">Telegram</a></li>
+                                <!-- <li><a href="https://t.me/easywafeedback" target="_blank">Telegram</a></li> -->
+                                <li>
+                                    <a href="https://t.me/easywafeedback" target="popup" onclick="window.open('https://t.me/easywafeedback','popup','width=600,height=600'); return false;">
+                                            Telegram
+                                        </a>
+                                </li>
                             </ul>
                         </div>
                         <div class="col col-md-3 text-left">
-                            <span class="menu">Помочь проекту</span>
+                            <span class="menu">Помочь проекту</span>                            
                             <ul class="list-unstyled">
-                                <li><a href="#">BTC</a></li>
-                                <li><a href="#">Webmoney</a></li>
+                                <li>
+                                    <a data-toggle="popover" title="BTC Wallet:" data-content="1ehCkBQ5a8iJTnC4nNk4nzWErc1u6rVYr">BTC</a>                                    
+                                <li>
+                                    <a data-toggle="popover" title="Webmoney wallet:" data-content="Z287722911072">Webmoney</a>
+                                </li>                                
                                 <li><a href="#">Buy me a coffee</a></li>
                             </ul>                           
                         </div>
                         <div class="col col-md-1">
                             <span id="hotlog_counter"></span>
                             <span id="hotlog_dyn"></span>
-                            <a href="https://click.hotlog.ru/?2587749" target="_blank">
-                                <img src="https://hit5.hotlog.ru/cgi-bin/hotlog/count?s=2587749&amp;im=510" alt="HotLog">
+                            <a href="https://click.hotlog.ru/?2587749" target="_blank">                                
                             </a>
                         </div>
                     </div>

@@ -20,11 +20,6 @@ new Vue({
     }
 })
 
-// function openWA(){                
-//     let number = document.getElementById("phone").value;                
-//     window.open(`https://wa.me/${number}`)
-// }
- 
 function openWA(){                
     let number = document.getElementById("phone").value;
         if(number === ''){
@@ -34,3 +29,8 @@ function openWA(){
     window.open(`https://wa.me/${number}`)
     }                
 }
+
+// Function needed by BS popover
+$(function () {
+    $('[data-toggle="popover"]').popover()
+  })
