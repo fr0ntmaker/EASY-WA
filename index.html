@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- GDRP script -->
+    <!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="beba3f93-a82c-4800-8873-3c0f775fa53e" data-blockingmode="auto" type="text/javascript"></script>     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="180x180" href="img/ICO/apple-touch-icon.png">
@@ -14,12 +16,12 @@
 </head>
     <body>
         <div class="container" id="app">            
-            <div class="row">
+            <div id="header" class="row">
                 <div class="col-md-8 align-self-center bg-success m-2 pt-2 rounded shadow">                
-                    <H1 class="lead text-left text-white font-weight-bold">EASY-WHATSAPP</H1>
+                    <H1 class="lead text-left text-white font-weight-bold"><a href="https://easy-wa.me">EASY-WHATSAPP</a></H1>
                 </div>
             </div>
-            <div class="row">
+            <div id="content" class="row">
                 <div class="col-md-8 m-2 pb-2 bg-light rounded shadow" style="min-height: 450px">
                     <form>
                         <div class="form-row mb-3">
@@ -76,11 +78,42 @@
                         <a class="a2a_button_wechat"></a>
                     </div>    
                     <!-- AddToAny Socials Share END -->
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-md-8 bg-secondary text-right">
+                    <!-- <a href="cookie_prefs.html">Cookie Declaration</a> -->
+                    <a href="cookie_prefs.html" target="popup" onclick="window.open('cookie_prefs.html','popup','width=600,height=600'); return false;">
+                        <small class="text-white">Cookie Declaration</small>
+                    </a>
                 </div>
             </div> 
+            <div class="row bg-info">
+                <div class="col">                    
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Cookie Declaration</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <script id="CookieDeclaration" src="https://consent.cookiebot.com/beba3f93-a82c-4800-8873-3c0f775fa53e/cd.js" type="text/javascript" async></script>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
             <div id="footer" class="row">
                 <div class="col-md-8 rounded-bottom bg-dark py-3 shadow">
-                    <div class="row align-items-center">
+                    <div class="row align-items-start">
                         <div class="col col-md-1 text-center">
                             <span>2020</span>
                         </div>
@@ -119,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>            
         </div>        
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -136,5 +169,6 @@
         </script>        
         <!-- /HotLog -->
         <script async src="https://static.addtoany.com/menu/page.js"></script>
+        
     </body>
 </html>
