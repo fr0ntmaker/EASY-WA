@@ -1,0 +1,61 @@
+/* @import url('https://fonts.googleapis.com/css?family=Lato:100,400,700,900'); */
+#header {    
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */ 
+    /* font-family: 'Lato', sans-serif;     */
+    font-family: 'Play', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;    
+    color: #fff;    
+    letter-spacing: 2px;        
+}
+
+#header a {        
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;        
+    cursor: pointer;
+    }
+
+#footer {    
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */ 
+    /* font-family: 'Lato', sans-serif;     */
+    font-family: 'Play', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 2px;        
+}
+
+.test {
+    margin: 0px;
+    padding: 0px;
+}
+
+#footer .menu {    
+    font-weight: bold;
+    text-decoration: underline;    
+}
+
+#footer ul {        
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+#footer ul li {
+    font-size: 11px;
+    /* line-height: 18px; */    
+    /* font-weight: 700; */
+    /* line-height: 1.6em;  */
+    /* padding-top: 2px;     */
+    padding: 3px;    
+}
+
+#footer ul li a {    
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    }
+
+#footer ul li a:hover {
+    color: #4BBF53;
+    font-weight: 700;
+    cursor: pointer;
+    }
