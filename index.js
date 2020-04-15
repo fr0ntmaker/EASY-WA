@@ -24,13 +24,18 @@ function openWA(){
     let number = document.getElementById("phone").value;
         if(number === ''){
             e.preventDefault();
-            alert('Введите правильный номер')
+            alert('Введите корректный номер')
         } else {
     window.open(`https://wa.me/${number}`)
     }                
 }
 
-// Function needed by BS popover
+// Function needed by BS Popover
 $(function () {
     $('[data-toggle="popover"]').popover()
+  })
+
+// Function needed by BS Modal
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
   })
