@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- GDRP script -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="180x180" href="img/ICO/apple-touch-icon.png">
@@ -17,7 +15,7 @@
     <body>
         <div class="container" id="app">            
             <div id="header" class="row">
-                <div class="col-md-8 align-self-center shadow">
+                <div class="col col-md-8 align-self-center shadow">
                     <div class="row justify-content-between wa-bg rounded shadow">
                         <div class="cols-6 m-3">
                             <H1 class="lead text-left text-white font-weight-bold">
@@ -28,18 +26,18 @@
                         <div class="cols-2 text-center mx-2">                            
                             <figure class="figure px-2 py-1 border-left border-right">
                                 <a href="https://en.easy-wa.me">
-                                    <img src="img/flags/USA/us_sqr_rnd.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="Russia flag">
+                                    <img src="img/flags/usa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="Russia flag">
                                     <figcaption class="figure-caption lang">English</figcaption>                                                                            
                                 </a>
                             </figure>
                             <figure class="figure px-1">
                                 <a href="https://ru.easy-wa.me">
-                                    <img src="img/flags/RUS/rus_sqr_rnd.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="USA flag">
+                                    <img src="img/flags/rus.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="USA flag">                                    
                                     <figcaption class="figure-caption lang">Русский</figcaption>
                                 </a>
                             </figure>                            
                             <figure class="figure px-2 border-left">
-                                <img src="img/flags/KSA/ksa_sqr_rnd.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="KSA flag">
+                                <img src="img/flags/ksa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="KSA flag">
                                 <figcaption class="figure-caption lang"><strong>عربى</strong></figcaption>
                             </figure>                            
                         </div>
@@ -47,22 +45,22 @@
                 </div>
             </div>
             <div id="content" class="row">
-                <div class="col-md-8 m-2 pb-2 bg-light rounded shadow" style="min-height: 450px">
+                <div class="col col-md-8 m-2 pb-2 bg-light rounded shadow" style="min-height: 450px">
                     <form>
-                        <div class="form-row mb-3">
-                            <div class="col-auto">            
+                        <div class="form-row mb-3 py-2">
+                            <div class="col-auto">
                                 <label for="phone">         
-                                    <span class="form-text text-muted">Введите номер:</span>
+                                    <span class="form-text text-muted py-2">Введите номер:</span>
                                 </label>
                                 <br>
                                 <input type="tel" 
                                 v-model="phone"
                                 name="phone"
                                 id="phone"
-                                placeholder="7(777)-777-7777"
+                                placeholder="7(777)-777-1111"
                                 autocomplete="tel"
                                 aria-describedby="numberHelp"
-                                maxlength="16"
+                                maxlength="18"
                                 class="form-control"
                                 v-phone/>                                
                                 <br>
@@ -78,7 +76,7 @@
                 </div>          
             </div>                       
             <div class="row">
-                <div class="col-md-8 bg-light p-3 shadow">                                        
+                <div class="col col-md-8 bg-light p-3 shadow">                                        
                     <!-- AddToAny Socials Share BEGIN -->
                     <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
                         <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
@@ -106,7 +104,7 @@
                 </div>                
             </div>
             <div class="row">
-                <div class="col-md-8 bg-secondary text-right">
+                <div class="col col-md-8 bg-secondary text-center text-md-right">
                     <!-- <a href="cookie_prefs.html">Cookie Declaration</a> -->
                     <a href="cookie_prefs.html" target="popup" onclick="window.open('cookie_prefs.html','popup','width=600,height=600'); return false;">
                         <small class="text-white">Cookie Declaration</small>
@@ -114,44 +112,61 @@
                 </div>
             </div>
             <div id="footer" class="row">
-                <div class="col-md-8 rounded-bottom bg-dark py-3 shadow">
+                <div class="col col-md-8 rounded-bottom bg-dark py-3 shadow">
                     <div class="row align-items-start">
-                        <div class="col col-md-1 text-center">
-                            <span>2020</span>
-                        </div>
-                        <div class="col col-md-3 text-center">
-                            <span>© Easy-WA</span>
-                        </div>
-                        <div class="col col-md-3 text-left">
-                            <span class="menu">Обратная связь</span>
+                        <div class="col-5 col-md-4 text-left">
+                            <span class="menu">Feedback</span>
                             <ul class="list-unstyled">
-                                <li><a href="mailto:feedback@easy-wa.me?subject=Feedback%20from%20EASY-WA%20site">e-mail</a></li>
-                                <li><a href="#">Jabber</a></li>                                
+                                <li><a href="mailto:feedback@easy-wa.me?subject=Feedback%20from%20EASY-WA%20site">
+                                    <img src="img/feedback/mail-icon.png" class="img-fluid align-middle" width="25px" alt="e-mail">
+                                    <span>e-mail</span></a></li>
+                                <li><a href="https://forms.gle/eCHAsBiCDG1LNokH8" target="popup" onclick="window.open('https://forms.gle/eCHAsBiCDG1LNokH8','popup','width=600,height=600'); return false;">
+                                    <img src="img/feedback/g-form.png" class="img-fluid align-middle" width="20px" alt="Google Form">
+                                    Google form</a></li>                                
                                 <!-- <li><a href="https://t.me/easywafeedback" target="_blank">Telegram</a></li> -->
                                 <li>
                                     <a href="https://t.me/easywafeedback" target="popup" onclick="window.open('https://t.me/easywafeedback','popup','width=600,height=600'); return false;">
-                                            Telegram
+                                        <img src="img/feedback/telegram.png" class="img-fluid align-middle" width="20px" alt="Telegram">
+                                        Telegram
                                         </a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="col col-md-3 text-left">
-                            <span class="menu">Помочь проекту</span>                            
+                        <div class="col-6 col-md-4 text-left">
+                            <span class="menu">Donate</span>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a data-toggle="popover" title="BTC Wallet:" data-content="1ehCkBQ5a8iJTnC4nNk4nzWErc1u6rVYr">BTC</a>                                    
+                                    <a data-toggle="popover" title="BTC Wallet:" data-content="1ehCkBQ5a8iJTnC4nNk4nzWErc1u6rVYr">
+                                        <img src="img/donate/BTC.png" class="img-fluid rounded align-middle" width="20px" alt="BTC">
+                                            BTC
+                                        </a>
                                 <li>
-                                    <a data-toggle="popover" title="Webmoney wallet:" data-content="Z287722911072">Webmoney</a>
+                                    <a data-toggle="popover" title="Webmoney wallet:" data-content="Z287722911072">
+                                        <img src="img/donate/WMZ.png" class="img-fluid rounded align-middle" width="20px" alt="Webmoney">
+                                        Webmoney
+                                    </a>
                                 </li>                                
-                                <li><a href="#">Buy me a coffee</a></li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/donate/BMC.png" class="img-fluid rounded align-middle" width="20px" alt="Buy me a coffee">
+                                            Buy me a coffee
+                                    </a>
+                                </li>
                             </ul>                           
                         </div>
-                        <div class="col col-md-1">
-                            <span id="hotlog_counter"></span>
-                            <span id="hotlog_dyn"></span>
+                        <div class="col-1 col-md-1 text-center">
+                            <hr></hr>
+                            <span id="hotlog_counter">Hot</span>
+                            <span id="hotlog_dyn">Log</span>
                             <a href="https://click.hotlog.ru/?2587749" target="_blank">                                
                             </a>
                         </div>
+                        <div class="col-12 col-md-3 order-sm-last order-md-first text-center my-auto">
+                            <hr>
+                            <span>2020 © Easy-WA</span>
+                        </hr>
+                        </div>
+
                     </div>
                 </div>
             </div>            
