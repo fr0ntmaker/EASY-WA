@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/ICO/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/ICO/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/ICO/favicon-16x16.png">
+    <link rel="manifest" href="../img/ICO/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
+    <link rel="stylesheet" href="../style/all.css">
+    <title>Easy Messaging</title>
+</head>
+    <body>
+        <div class="container" id="app">            
+            <div id="header" class="row">
+                <div class="col col-md-8 align-self-center shadow">
+                    <div class="row justify-content-between wa-bg rounded shadow">
+                        <div class="cols-6 m-3">
+                            <H1 class="lead text-left text-white font-weight-bold">
+                                <a href="https://easy-wa.me">EASY-WHATSAPP
+                                </a>
+                            </H1>
+                        </div>
+                        <div class="cols-2 text-center mx-2">                            
+                            <figure class="figure px-2 py-1 border-left border-right">
+                                <a href="../en/index.html">
+                                    <img src="../img/flags/usa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="Russia flag">
+                                    <figcaption class="figure-caption lang">English</figcaption>                                                                            
+                                </a>
+                            </figure>
+                            <figure class="figure px-1">
+                                <a href="../ru/index.html">
+                                    <img src="../img/flags/rus.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="USA flag">                                    
+                                    <figcaption class="figure-caption lang">Русский</figcaption>
+                                </a>
+                            </figure>                            
+                            <figure class="figure px-2 border-left">
+                                <a href="#">                                
+                                    <img src="../img/flags/ksa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="KSA flag">
+                                    <figcaption class="figure-caption lang"><strong>عربى</strong></figcaption>
+                                </a>
+                            </figure>                            
+                        </div>
+                    </div>                               
+                </div>
+            </div>
+            <div id="content" class="row">
+                <div class="col col-md-8 m-2 pb-2 bg-light rounded shadow" style="min-height: 450px">
+                    <form>
+                        <div class="form-row mb-3 py-2">
+                            <div class="col-auto">
+                                <label for="phone">         
+                                    <span class="form-text text-muted py-2">أدخل الرقم:</span>
+                                </label>
+                                <br>
+                                <input type="tel" 
+                                v-model="phone"
+                                name="phone"
+                                id="phone"
+                                placeholder="1(111)-111-1111"
+                                autocomplete="tel"
+                                aria-describedby="numberHelp"
+                                maxlength="18"
+                                class="form-control"
+                                v-phone/>                                
+                                <br>
+                                <small>
+                                    <span id="numberHelp" class="form-text text-muted">تحقق من الرقم:
+                                        <br>
+                                        <h3>+{{phone}}</h3></span>                                        
+                                </small>
+                            </div>
+                        </div>                                 
+                        <button type="submit" class="btn btn-success rounded" onclick="openWA()"> WhatsApp افتح في</button>
+                    </form>                    
+                </div>          
+            </div>                       
+            <div class="row">
+                <div class="col col-md-8 bg-light p-3 shadow">                                        
+                    <!-- AddToAny Socials Share BEGIN -->
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_email"></a>
+                        <a class="a2a_button_whatsapp"></a>
+                        <a class="a2a_button_telegram"></a>
+                        <a class="a2a_button_blogger"></a>
+                        <a class="a2a_button_diigo"></a>
+                        <a class="a2a_button_viber"></a>
+                        <a class="a2a_button_pinterest"></a>
+                        <a class="a2a_button_reddit"></a>
+                        <a class="a2a_button_google_gmail"></a>
+                        <a class="a2a_button_tumblr"></a>
+                        <a class="a2a_button_copy_link"></a>
+                        <a class="a2a_button_digg"></a>
+                        <a class="a2a_button_google_bookmarks"></a>
+                        <a class="a2a_button_mail_ru"></a>
+                        <a class="a2a_button_odnoklassniki"></a>
+                        <a class="a2a_button_vk"></a>
+                        <a class="a2a_button_wechat"></a>
+                    </div>    
+                    <!-- AddToAny Socials Share END -->
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col col-md-8 bg-secondary text-center text-md-right">
+                    <a href="../cookie_prefs.html" target="popup" onclick="window.open('../cookie_prefs.html','popup','width=600,height=600'); return false;">
+                        <small class="text-white">Cookie Declaration</small>
+                    </a>
+                </div>
+            </div>
+            <div id="footer" class="row">
+                <div class="col col-md-8 rounded-bottom bg-dark py-3 shadow">
+                    <div class="row align-items-start">
+                        <div class="col-5 col-md-4 text-left">
+                            <span class="menu">Feedback</span>
+                            <ul class="list-unstyled">
+                                <li><a href="mailto:feedback@easy-wa.me?subject=Feedback%20from%20EASY-WA%20site">
+                                    <img src="../img/feedback/mail-icon.png" class="img-fluid align-middle" width="25px" alt="e-mail">
+                                    <span>e-mail</span></a></li>
+                                <li><a href="https://forms.gle/dbpUx7eVrEQ3Mgg18" target="popup" onclick="window.open('https://forms.gle/dbpUx7eVrEQ3Mgg18','popup','width=600,height=600'); return false;">
+                                    <img src="../img/feedback/g-form.png" class="img-fluid align-middle" width="20px" alt="Google Form">
+                                    Google form</a></li>                                                                
+                                <li>
+                                    <a href="https://t.me/easywafeedback" target="popup" onclick="window.open('https://t.me/easywafeedback','popup','width=600,height=600'); return false;">
+                                        <img src="../img/feedback/telegram.png" class="img-fluid align-middle" width="20px" alt="Telegram">
+                                        Telegram
+                                        </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4 text-left">
+                            <span class="menu">Donate</span>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a data-toggle="popover" title="BTC Wallet:" data-content="1ehCkBQ5a8iJTnC4nNk4nzWErc1u6rVYr">
+                                        <img src="../img/donate/BTC.png" class="img-fluid rounded align-middle" width="20px" alt="BTC">
+                                            BTC
+                                        </a>
+                                <li>
+                                    <a data-toggle="popover" title="Webmoney wallet:" data-content="Z287722911072">
+                                        <img src="../img/donate/WMZ.png" class="img-fluid rounded align-middle" width="20px" alt="Webmoney">
+                                        Webmoney
+                                    </a>
+                                </li>                                
+                                <li>
+                                    <a href="https://www.buymeacoffee.com/easywa" target="_blank">
+                                        <img src="../img/donate/BMC.png" class="img-fluid rounded align-middle" width="20px" alt="Buy me a coffee">
+                                            Buy me a coffee
+                                    </a>
+                                </li>
+                            </ul>                           
+                        </div>
+                        <div class="col-1 col-md-1 text-left">
+                            <hr></hr>
+                            <span id="hotlog_counter"></span>
+                            <span id="hotlog_dyn"></span>
+                            <a href="https://click.hotlog.ru/?2587749" target="_blank">                                
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-3 order-sm-last order-md-first text-center my-auto">
+                            <hr>
+                            <span>2020 © Easy-WA</span>
+                        </hr>
+                        </div>
+
+                    </div>
+                </div>
+            </div>            
+        </div>        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="../index.js"></script>
+        <!-- HotLog -->
+        <script type="text/javascript">
+            var hot_s = document.createElement('script');
+            hot_s.type = 'text/javascript'; hot_s.async = true;
+            hot_s.src = 'https://js.hotlog.ru/dcounter/2587749.js';
+            hot_d = document.getElementById('hotlog_dyn');
+            hot_d.appendChild(hot_s);
+        </script>        
+        <!-- /HotLog -->
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        
+    </body>
+</html>
