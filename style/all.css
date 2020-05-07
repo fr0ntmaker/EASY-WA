@@ -1,9 +1,12 @@
 /* @import url('https://fonts.googleapis.com/css?family=Lato:100,400,700,900'); */
 @import url('reset.css');
-#header {    
+body {
+    font-family: 'Play', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */ 
     /* font-family: 'Lato', sans-serif;     */
-    font-family: 'Play', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;    
+}
+
+#header {        
     color: #fff;    
     letter-spacing: 2px;        
 }
@@ -20,22 +23,26 @@
     background: linear-gradient(90deg, rgba(40,167,69,1) 0%, rgba(255,255,255,0.10407913165266103) 75%);
  }    
 
-.lang {
-    font-family: 'Play', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;    
-    font-size: 8px;  
-    /* color: #28a745;       */
-    color: #000;      
-    /* letter-spacing: 2px;   */
-}
-
-.lang a {
+.lang {    
+    font-size: 8px;
+    background-color: #fff;
+    border-radius: 25px;
     color: green;
+    padding: 3px;
 }
 
-#footer {    
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */ 
-    /* font-family: 'Lato', sans-serif;     */
-    font-family: 'Play', sans-serif, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+.input {
+    letter-spacing: 1.5px;
+}
+
+.verify {    
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    line-height: 2.0em;     
+}
+
+#footer {
     font-size: 12px;
     color: #fff;
     letter-spacing: 2px;    
@@ -54,10 +61,6 @@
 
 #footer ul li {
     font-size: 11px;
-    /* line-height: 18px; */    
-    /* font-weight: 700; */
-    /* line-height: 1.6em;  */
-    /* padding-top: 2px;     */
     padding: 3px;    
 }
 
