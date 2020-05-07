@@ -63,14 +63,11 @@
                                 autocomplete="tel"
                                 aria-describedby="numberHelp"
                                 maxlength="18"
-                                class="form-control"
+                                class="form-control text-success input"
                                 v-phone/>                                
                                 <br>
-                                <small>
-                                    <span id="numberHelp" class="form-text text-muted">تحقق من الرقم:
-                                        <br>
-                                        <h3>+{{phone}}</h3></span>                                        
-                                </small>
+                                <h3 id="numberHelp" class="form-text text-muted">:تحقق من الرقم</h3>
+                                <span class="verify text-danger">+{{phone}}</span>
                             </div>
                         </div>                                 
                         <button type="submit" class="btn btn-success rounded" onclick="openWA()"> WhatsApp افتح في</button>

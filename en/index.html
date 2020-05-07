@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="send WhatsApp messages to people not in your contact, Send WhatsApp Message without Saving Number, WhatsApp Direct Without Adding Number, WhatsApp direct, WhatsApp immediate messages">
     <link rel="apple-touch-icon" sizes="180x180" href="../img/ICO/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/ICO/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/ICO/favicon-16x16.png">
@@ -63,14 +64,11 @@
                                 autocomplete="tel"
                                 aria-describedby="numberHelp"
                                 maxlength="18"
-                                class="form-control"
+                                class="form-control text-success input"
                                 v-phone/>                                
                                 <br>
-                                <small>
-                                    <span id="numberHelp" class="form-text text-muted">Check your input:
-                                        <br>
-                                        <h3>+{{phone}}</h3></span>                                        
-                                </small>
+                                <h3 id="numberHelp" class="form-text text-muted">Check your input:</h3>
+                                <span class="verify text-danger">+{{phone}}</span>
                             </div>
                         </div>                                 
                         <button type="submit" class="btn btn-success rounded" onclick="openWA()">Open in WhatsApp</button>
