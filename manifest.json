@@ -1,24 +1,41 @@
 {
   "name": "Easy WhatsApp Messenger",
   "short_name": "Easy WA",
-  "description": "Отправка WhatsApp сообщений без сохранения контакта",
+  "description": "Отправка WhatsApp сообщений без сохранения контакта. Send WhatsApp messages without saving contact",
+  "id": "easy-wa-messenger",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#28a745",
   "orientation": "portrait",
+  "dir": "ltr",
+  "lang": "ru",
   "icons": [
     {
       "src": "/img/ICO/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/img/ICO/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "categories": ["utilities", "social"],
-  "lang": "ru"
+  "screenshots": [
+    {
+      "src": "/screenshots/main-screen.jpg",
+      "sizes": "540x960",
+      "type": "image/jpeg",
+      "label": "Главный экран приложения"
+    }
+  ],
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }
