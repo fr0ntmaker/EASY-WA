@@ -22,11 +22,21 @@ new Vue({
 
 function openWA(){                
     let number = document.getElementById("phone").value;
-        if(number === ''){
-            e.preventDefault();
-            alert('Введите корректный номер')
-        } else {
-    window.open(`https://wa.me/${number}`)
+    
+    if(number === ''){
+        e.preventDefault();
+        alert('Введите корректный номер')
+    } else {
+        // Удаляем все символы кроме цифр
+        let cleanNumber = number.replace(/\D/g, '');
+        
+        // Если первая цифра 8, меняем её на 7
+        if(cleanNumber.charAt(0) === '8') {
+            cleanNumber = '7' + cleanNumber.slice(1);
+        }
+        
+        // Открываем WhatsApp с обработанным номером
+        window.open(`https://wa.me/${cleanNumber}`)
     }                
 }
 
