@@ -25,7 +25,10 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["utilities", "social"],
+  "categories": [
+    "utilities",
+    "social"
+  ],
   "screenshots": [
     {
       "src": "/screenshots/main-screen.jpg",
@@ -34,7 +37,11 @@
       "label": "Главный экран приложения"
     }
   ],
-  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "launch_handler": {
     "client_mode": "navigate-existing"
   }
