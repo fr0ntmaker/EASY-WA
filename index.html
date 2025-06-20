@@ -27,6 +27,26 @@
     <title>Easy WhatsApp Messaging</title>
     
     <style>
+        /* Sticky Footer Solution */
+        html, body {
+            height: 100%;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #footer {
+            margin-top: auto;
+        }
+        
         /* Cookie Banner Styles */
         .cookie-banner {
             position: fixed;
