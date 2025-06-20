@@ -50,24 +50,7 @@ Vue.directive('phone', {
         el.oninput = function(e) {
             if (!e.isTrusted) {
                 return;
-            },
-        copyToClipboard(text, walletType) {
-            // Create temporary input
-            const tempInput = document.createElement('input');
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            
-            try {
-                document.execCommand('copy');
-                alert(`${walletType} wallet address copied: ${text}`);
-            } catch (err) {
-                // Fallback - show address for manual copy
-                prompt(`Copy ${walletType} wallet address:`, text);
             }
-            
-            document.body.removeChild(tempInput);
-        }
             
             // Get only digits
             let digits = this.value.replace(/\D/g, '');
@@ -162,16 +145,35 @@ new Vue({
             this.showCookieBanner = false;
         },
         initializeAnalytics() {
-            // HotLog
-            if (typeof hot_s === 'undefined') {
-                var hot_s = document.createElement('script');
-                hot_s.type = 'text/javascript';
-                hot_s.async = true;
-                hot_s.src = 'https://js.hotlog.ru/dcounter/2587749.js';
-                document.body.appendChild(hot_s);
+            // Add Google Analytics or other analytics here if needed
+            // For example:
+            // if (window.gtag) {
+            //     gtag('consent', 'update', {
+            //         'analytics_storage': 'granted'
+            //     });
+            // }
+        },
+        copyToClipboard(text, walletType) {
+            // Create temporary input
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand('copy');
+                alert(`${walletType} wallet address copied: ${text}`);
+            } catch (err) {
+                // Fallback - show address for manual copy
+                prompt(`Copy ${walletType} wallet address:`, text);
             }
             
-            // Add Google Analytics here if you have it
+            document.body.removeChild(tempInput);
         }
     }
+});
+
+// Bootstrap popover initialization
+$(function () {
+    $('[data-toggle="popover"]').popover()
 });
