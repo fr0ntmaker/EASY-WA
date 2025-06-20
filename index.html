@@ -256,7 +256,7 @@
         </div>
         
         <!-- Cookie Banner -->
-        <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner" :class="{ show: showCookieBanner }" v-show="showCookieBanner">
             <div class="cookie-content">
                 <div class="cookie-text">
                     <p>{{ t.cookieText }}</p>

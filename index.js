@@ -75,7 +75,8 @@ new Vue({
     data: {
         phone: '',
         currentLang: 'en',
-        t: translations.en
+        t: translations.en,
+        showCookieBanner: false
     },
     mounted() {
         // Check saved language preference
@@ -95,7 +96,7 @@ new Vue({
         // Show cookie banner if not accepted
         if (!localStorage.getItem('cookiesAccepted')) {
             setTimeout(() => {
-                document.getElementById('cookieBanner').classList.add('show');
+                this.showCookieBanner = true;
             }, 1000);
         }
     },
@@ -134,14 +135,14 @@ new Vue({
         },
         acceptCookies() {
             localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookieBanner').classList.remove('show');
+            this.showCookieBanner = false;
             
             // Initialize analytics here if needed
             this.initializeAnalytics();
         },
         declineCookies() {
             localStorage.setItem('cookiesAccepted', 'false');
-            document.getElementById('cookieBanner').classList.remove('show');
+            this.showCookieBanner = false;
         },
         initializeAnalytics() {
             // HotLog
