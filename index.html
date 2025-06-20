@@ -1,29 +1,128 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Сервис для отправки WhatsApp сообщений без добавления номера в контакты (отправка WhatsApp сообщений на номера, которых нет в адресной книге телефона)">
-    <meta name="keywords" content="whatsapp без номера, WhatsApp нет в контактах, WhatsApp без добавления, WhatsApp напрямую, WhatsApp без добавления">
+    <meta name="description" content="Send WhatsApp messages without saving contact. Отправка WhatsApp без сохранения номера. إرسال رسائل واتساب بدون حفظ">
+    <meta name="keywords" content="whatsapp, direct message, without contact, без контакта, بدون حفظ">
+    
     <link rel="apple-touch-icon" sizes="180x180" href="img/ICO/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/ICO/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/ICO/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#28a745">
+    
     <meta property="og:title" content="Easy-WA">
     <meta property="og:image" content="https://easy-wa.me/img/ICO/android-chrome-512x512.png">
-    <meta property="og:description" content="Отправка сообщений на WhatsApp без сохранения номера в контакты">
+    <meta property="og:description" content="Send WhatsApp messages without saving contact">
     <meta property="og:site_name" content="Easy WhatsApp">
     <meta property="og:url" content="https://easy-wa.me/">
-    <meta property="og:locale" content="ru_RU">
+    
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style/all.css">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>Easy Messaging</title>
-    <script data-ad-client="ca-pub-6382861008103430" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <title>Easy WhatsApp Messaging</title>
+    
+    <style>
+        /* Cookie Banner Styles */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: none;
+        }
+        
+        .cookie-banner.show {
+            display: block;
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .cookie-banner button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .cookie-accept {
+            background: #28a745;
+            color: white;
+        }
+        
+        .cookie-accept:hover {
+            background: #218838;
+        }
+        
+        .cookie-decline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        .cookie-decline:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        
+        /* Language flags animation */
+        .figure {
+            transition: transform 0.2s;
+        }
+        
+        .figure:hover {
+            transform: scale(1.1);
+        }
+        
+        /* RTL support for Arabic */
+        [dir="rtl"] .form-control {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .text-left {
+            text-align: right !important;
+        }
+        
+        [dir="rtl"] .text-right {
+            text-align: left !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,53 +131,56 @@
             <div class="col col-md-8 align-self-center shadow">
                 <div class="row justify-content-between wa-bg rounded shadow">
                     <div class="cols-6 m-3">
-                        <H1 class="lead text-left text-white font-weight-bold">
-                            <a href="https://easy-wa.me">EASY-WHATSAPP
-                                </a>
-                        </H1>
+                        <h1 class="lead text-left text-white font-weight-bold">
+                            <a href="https://easy-wa.me">EASY-WHATSAPP</a>
+                        </h1>
                     </div>
                     <div class="cols-2 text-center mx-2">
                         <figure class="figure px-2 py-1 border-left border-right">
-                            <a href="en/index.html">
-                                <img src="img/flags/usa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="Russia flag">
-                                <figcaption class="figure-caption lang">English</figcaption>
+                            <a href="#" @click.prevent="changeLanguage('en')">
+                                <img src="img/flags/usa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="English">
+                                <figcaption class="figure-caption lang" :class="{ 'font-weight-bold': currentLang === 'en' }">English</figcaption>
                             </a>
                         </figure>
                         <figure class="figure px-1">
-                            <a href="ru/index.html">
-                                <img src="img/flags/rus.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="USA flag">
-                                <figcaption class="figure-caption lang">Русский</figcaption>
+                            <a href="#" @click.prevent="changeLanguage('ru')">
+                                <img src="img/flags/rus.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="Русский">
+                                <figcaption class="figure-caption lang" :class="{ 'font-weight-bold': currentLang === 'ru' }">Русский</figcaption>
                             </a>
                         </figure>
                         <figure class="figure px-2 border-left">
-                            <a href="ar/index.html">
-                                <img src="img/flags/ksa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="KSA flag">
-                                <figcaption class="figure-caption lang"><strong>عربى</strong></figcaption>
+                            <a href="#" @click.prevent="changeLanguage('ar')">
+                                <img src="img/flags/ksa.png" class="figure-img img-fluid rounded py-0 m-0" width="40px" alt="عربى">
+                                <figcaption class="figure-caption lang" :class="{ 'font-weight-bold': currentLang === 'ar' }">عربى</figcaption>
                             </a>
                         </figure>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div id="content" class="row">
             <div class="col col-md-8 m-2 pb-2 bg-light rounded shadow" style="min-height: 450px">
-                <form>
+                <form @submit.prevent="openWA">
                     <div class="form-row mb-3 py-2">
                         <div class="col-auto">
                             <label for="phone">         
-                                    <span class="form-text text-muted py-2">Введите номер:</span>
-                                </label>
+                                <span class="form-text text-muted py-2">{{ t.enterNumber }}</span>
+                            </label>
                             <br>
-                            <input type="tel" v-model="phone" name="phone" id="phone" placeholder="7(777)-777-7777" autocomplete="tel" aria-describedby="numberHelp" maxlength="18" class="form-control text-success input" v-phone/>
+                            <input type="tel" v-model="phone" name="phone" id="phone" :placeholder="t.placeholder" 
+                                   autocomplete="tel" aria-describedby="numberHelp" maxlength="18" 
+                                   class="form-control text-success input" v-phone />
                             <br>
-                            <h3 id="numberHelp" class="form-text text-muted">Проверьте введенный номер:</h3>
-                            <span class="verify text-danger">+{{phone}}</span>
+                            <h3 id="numberHelp" class="form-text text-muted">{{ t.checkNumber }}</h3>
+                            <span class="verify text-danger">+{{ phone }}</span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success rounded" onclick="openWA()">Открыть в WhatsApp</button>
+                    <button type="submit" class="btn btn-success rounded">{{ t.openButton }}</button>
                 </form>
             </div>
         </div>
+        
         <div class="row">
             <div class="col col-md-8 bg-light p-3 shadow">
                 <!-- AddToAny Socials Share BEGIN -->
@@ -89,102 +191,97 @@
                     <a class="a2a_button_email"></a>
                     <a class="a2a_button_whatsapp"></a>
                     <a class="a2a_button_telegram"></a>
-                    <a class="a2a_button_blogger"></a>
-                    <a class="a2a_button_diigo"></a>
                     <a class="a2a_button_viber"></a>
                     <a class="a2a_button_pinterest"></a>
                     <a class="a2a_button_reddit"></a>
-                    <a class="a2a_button_google_gmail"></a>
-                    <a class="a2a_button_tumblr"></a>
                     <a class="a2a_button_copy_link"></a>
-                    <a class="a2a_button_digg"></a>
-                    <a class="a2a_button_google_bookmarks"></a>
-                    <a class="a2a_button_mail_ru"></a>
-                    <a class="a2a_button_odnoklassniki"></a>
-                    <a class="a2a_button_vk"></a>
-                    <a class="a2a_button_wechat"></a>
                 </div>
                 <!-- AddToAny Socials Share END -->
             </div>
         </div>
-        <div class="row">
-            <div class="col col-md-8 bg-secondary text-center text-md-right">
-                <a href="cookie_prefs.html" target="popup" onclick="window.open('cookie_prefs.html','popup','width=600,height=600'); return false;">
-                    <small class="text-white">Cookie Declaration</small>
-                </a>
-            </div>
-        </div>
+        
         <div id="footer" class="row">
             <div class="col col-md-8 rounded-bottom bg-dark py-3 shadow">
                 <div class="row align-items-start">
                     <div class="col-5 col-md-4 text-left">
-                        <span class="menu">Feedback</span>
+                        <span class="menu">{{ t.feedback }}</span>
                         <ul class="list-unstyled">
                             <li>
                                 <a href="mailto:feedback@easy-wa.me?subject=Feedback%20from%20EASY-WA%20site">
                                     <img src="img/feedback/mail-icon.png" class="img-fluid align-middle" width="25px" alt="e-mail">
-                                    <span>e-mail</span></a>
+                                    <span>e-mail</span>
+                                </a>
                             </li>
                             <li>
-                                <a href="https://forms.gle/eCHAsBiCDG1LNokH8" target="popup" onclick="window.open('https://forms.gle/eCHAsBiCDG1LNokH8','popup','width=600,height=600'); return false;">
-                                    <img src="img/feedback/g-form.png" class="img-fluid align-middle" width="20px" alt="Google Form"> Google form</a>
+                                <a :href="t.googleFormLink" target="_blank">
+                                    <img src="img/feedback/g-form.png" class="img-fluid align-middle" width="20px" alt="Google Form"> 
+                                    Google form
+                                </a>
                             </li>
                             <li>
-                                <a href="https://t.me/easywafeedback" target="popup" onclick="window.open('https://t.me/easywafeedback','popup','width=600,height=600'); return false;">
-                                    <img src="img/feedback/telegram.png" class="img-fluid align-middle" width="20px" alt="Telegram"> Telegram
+                                <a href="https://t.me/easywafeedback" target="_blank">
+                                    <img src="img/feedback/telegram.png" class="img-fluid align-middle" width="20px" alt="Telegram"> 
+                                    Telegram
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4 text-left">
-                        <span class="menu">Donate</span>
+                        <span class="menu">{{ t.donate }}</span>
                         <ul class="list-unstyled">
                             <li>
                                 <a data-toggle="popover" title="BTC Wallet:" data-content="16ufFXF5qjBHJsS8EKprqG9ufJRHvvaTWS">
                                     <img src="img/donate/BTC.png" class="img-fluid rounded align-middle" width="20px" alt="BTC"> BTC
                                 </a>
-                                <li>
-                                    <a data-toggle="popover" title="Webmoney wallet:" data-content="Z287722911072">
-                                        <img src="img/donate/WMZ.png" class="img-fluid rounded align-middle" width="20px" alt="Webmoney"> Webmoney
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.buymeacoffee.com/easywa" target="_blank">
-                                        <img src="img/donate/BMC.png" class="img-fluid rounded align-middle" width="20px" alt="Buy me a coffee"> Buy me a coffee
-                                    </a>
-                                </li>
+                            </li>
+                            <li>
+                                <a data-toggle="popover" title="Webmoney wallet:" data-content="Z287722911072">
+                                    <img src="img/donate/WMZ.png" class="img-fluid rounded align-middle" width="20px" alt="Webmoney"> Webmoney
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.buymeacoffee.com/easywa" target="_blank">
+                                    <img src="img/donate/BMC.png" class="img-fluid rounded align-middle" width="20px" alt="Buy me a coffee"> 
+                                    Buy me a coffee
+                                </a>
+                            </li>
                         </ul>
-                    </div>
-                    <div class="col-1 col-md-1 text-left">
-                        <hr></hr>
-                        <span id="hotlog_counter"></span>
-                        <span id="hotlog_dyn"></span>
-                        <a href="https://click.hotlog.ru/?2587749" target="_blank">
-                        </a>
                     </div>
                     <div class="col-12 col-md-3 order-sm-last order-md-first text-center my-auto">
                         <hr>
-                        <span>2025 © Easy-WA</span>
-                        </hr>
+                        <span>{{ t.copyright }}</span>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>{{ t.cookieText }}</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-decline" @click="declineCookies">{{ t.cookieDecline }}</button>
+                <button class="cookie-accept" @click="acceptCookies">{{ t.cookieAccept }}</button>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="index.js?v=spa-1"></script>
     <script async src="https://static.addtoany.com/menu/page.js"></script>
-    <!-- PWA -->
+    
     <script>
-    if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js');
-    }
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
     </script>
-    <!--     -->
 </body>
 
 </html>
