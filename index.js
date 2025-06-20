@@ -50,7 +50,24 @@ Vue.directive('phone', {
         el.oninput = function(e) {
             if (!e.isTrusted) {
                 return;
+            },
+        copyToClipboard(text, walletType) {
+            // Create temporary input
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand('copy');
+                alert(`${walletType} wallet address copied: ${text}`);
+            } catch (err) {
+                // Fallback - show address for manual copy
+                prompt(`Copy ${walletType} wallet address:`, text);
             }
+            
+            document.body.removeChild(tempInput);
+        }
             
             // Get only digits
             let digits = this.value.replace(/\D/g, '');
@@ -157,9 +174,4 @@ new Vue({
             // Add Google Analytics here if you have it
         }
     }
-});
-
-// Bootstrap popover initialization
-$(function () {
-    $('[data-toggle="popover"]').popover()
 });

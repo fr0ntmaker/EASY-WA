@@ -250,12 +250,12 @@
                         <span class="menu">{{ t.donate }}</span>
                         <ul class="list-unstyled">
                             <li>
-                                <a data-toggle="popover" title="BTC Wallet:" data-content="16ufFXF5qjBHJsS8EKprqG9ufJRHvvaTWS">
+                                <a href="#" @click.prevent="copyToClipboard('16ufFXF5qjBHJsS8EKprqG9ufJRHvvaTWS', 'BTC')">
                                     <img src="img/donate/BTC.png" class="img-fluid rounded align-middle" width="20px" alt="BTC"> BTC
                                 </a>
                             </li>
                             <li>
-                                <a data-toggle="popover" title="Webmoney wallet:" data-content="Z287722911072">
+                                <a href="#" @click.prevent="copyToClipboard('Z287722911072', 'Webmoney')">
                                     <img src="img/donate/WMZ.png" class="img-fluid rounded align-middle" width="20px" alt="Webmoney"> Webmoney
                                 </a>
                             </li>
